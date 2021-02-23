@@ -5,13 +5,13 @@ Car Sales Web Application
 ![Capture](Capture.PNG)
 
 # Profile Page
-![Capture2](Captur2.PNG)
+![Capture2](Capture2.PNG)
 
 # Announcement Posting Form
-![Capture3](Captur3.PNG)
+![Capture3](Capture3.PNG)
 
 # Login Page
-![Capture4](Captur4.PNG)
+![Capture4](Capture4.PNG)
 
 Programming Languages& Technologies used:
 
