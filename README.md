@@ -7,7 +7,7 @@ Car Sales Web Application
 # Profile Page
 ![Capture2](Capture2.PNG)
 
-# Announcement Posting Form
+# Announcements filter Page
 ![Capture3](Capture3.PNG)
 
 # Login Page
