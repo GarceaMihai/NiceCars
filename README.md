@@ -1,10 +1,17 @@
 # NiceCars
 Car Sales Web Application
 
-![Home page](Capture.PNG)
-(Capture2.png)
-(Capture4.png)
-(Capture3.png)
+# Home Page
+![Capture](Capture.PNG)
+
+# Profile Page
+![Capture2](Captur2.PNG)
+
+# Announcement Posting Form
+![Capture3](Captur3.PNG)
+
+# Login Page
+![Capture4](Captur4.PNG)
 
 Programming Languages& Technologies used:
 
