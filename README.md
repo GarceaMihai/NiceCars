@@ -1,7 +1,7 @@
 # NiceCars
 Car Sales Web Application
 
-(Capture.png)
+![](Capture.png)
 (Capture2.png)
 (Capture4.png)
 (Capture3.png)
