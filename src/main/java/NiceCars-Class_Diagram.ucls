@@ -1,0 +1,657 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<class-diagram version="1.2.4" icons="true" automaticImage="PNG" always-add-relationships="false" generalizations="true" 
+  realizations="true" associations="true" dependencies="false" nesting-relationships="true" router="FAN">  
+  <class id="1" language="java" name="com.utcn.is.NiceCars.NiceCarsApplication" project="NiceCars" 
+    file="/NiceCars/src/main/java/com/utcn/is/NiceCars/NiceCarsApplication.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="73" y="-166"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="2" language="java" name="com.utcn.is.NiceCars.config.SecurityConfiguration" project="NiceCars" 
+    file="/NiceCars/src/main/java/com/utcn/is/NiceCars/config/SecurityConfiguration.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="135" y="12"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="3" language="java" name="com.utcn.is.NiceCars.controller.AnnouncementController" project="NiceCars" 
+    file="/NiceCars/src/main/java/com/utcn/is/NiceCars/controller/AnnouncementController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="708" y="48"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="4" language="java" name="com.utcn.is.NiceCars.controller.SearchController" project="NiceCars" 
+    file="/NiceCars/src/main/java/com/utcn/is/NiceCars/controller/SearchController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="250" width="289" x="950" y="-79"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="5" language="java" name="com.utcn.is.NiceCars.controller.UserController" project="NiceCars" 
+    file="/NiceCars/src/main/java/com/utcn/is/NiceCars/controller/UserController.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="286" width="390" x="1279" y="-79"/>    
+    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="6" language="java" name="com.utcn.is.NiceCars.model.User.UserBuilder" project="NiceCars" 
+    file="/NiceCars/src/main/java/com/utcn/is/NiceCars/model/User.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="124" width="192" x="3452" y="155"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="7" language="java" name="com.utcn.is.NiceCars.service.UserService" project="NiceCars" 
+    file="/NiceCars/src/main/java/com/utcn/is/NiceCars/service/UserService.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="124" width="196" x="554" y="433"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="8" language="java" name="com.utcn.is.NiceCars.dto.AnnouncementDto" project="NiceCars" 
+    file="/NiceCars/src/main/java/com/utcn/is/NiceCars/dto/AnnouncementDto.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="570" width="293" x="-329" y="-232"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="9" language="java" name="com.utcn.is.NiceCars.model.Announcement" project="NiceCars" 
+    file="/NiceCars/src/main/java/com/utcn/is/NiceCars/model/Announcement.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="809" width="698" x="2569" y="-191"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="10" language="java" name="com.utcn.is.NiceCars.repository.PhotoRepository" project="NiceCars" 
+    file="/NiceCars/src/main/java/com/utcn/is/NiceCars/repository/PhotoRepository.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="124" width="211" x="1396" y="934"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="11" language="java" name="com.utcn.is.NiceCars.repository.CommentRepository" project="NiceCars" 
+    file="/NiceCars/src/main/java/com/utcn/is/NiceCars/repository/CommentRepository.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="124" width="211" x="1093" y="920"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <interface id="12" language="java" name="com.utcn.is.NiceCars.repository.UserRepository" project="NiceCars" 
+    file="/NiceCars/src/main/java/com/utcn/is/NiceCars/repository/UserRepository.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="124" width="211" x="540" y="702"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <annotation id="13" language="java" name="com.utcn.is.NiceCars.util.FieldMatch" project="NiceCars" 
+    file="/NiceCars/src/main/java/com/utcn/is/NiceCars/util/FieldMatch.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="124" width="173" x="1706" y="-227"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </annotation>  
+  <class id="14" language="java" name="com.utcn.is.NiceCars.model.Comment" project="NiceCars" 
+    file="/NiceCars/src/main/java/com/utcn/is/NiceCars/model/Comment.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="124" width="192" x="3735" y="-20"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="15" language="java" name="com.utcn.is.NiceCars.dto.FilterDto" project="NiceCars" 
+    file="/NiceCars/src/main/java/com/utcn/is/NiceCars/dto/FilterDto.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="124" width="220" x="970" y="-225"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="16" language="java" name="com.utcn.is.NiceCars.model.Observer" project="NiceCars" 
+    file="/NiceCars/src/main/java/com/utcn/is/NiceCars/model/Observer.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="124" width="192" x="115" y="527"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="17" language="java" name="com.utcn.is.NiceCars.model.Observable" project="NiceCars" 
+    file="/NiceCars/src/main/java/com/utcn/is/NiceCars/model/Observable.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="123" width="192" x="3751" y="-198"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <annotation id="18" language="java" name="com.utcn.is.NiceCars.util.FieldMatch.List" project="NiceCars" 
+    file="/NiceCars/src/main/java/com/utcn/is/NiceCars/util/FieldMatch.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="124" width="173" x="1471" y="-227"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </annotation>  
+  <class id="19" language="java" name="com.utcn.is.NiceCars.util.StatisticsUtil" project="NiceCars" 
+    file="/NiceCars/src/main/java/com/utcn/is/NiceCars/util/StatisticsUtil.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="124" width="173" x="1255" y="-218"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="20" language="java" name="com.utcn.is.NiceCars.dto.UserRegistrationDto.UserRegistrationDtoBuilder" 
+    project="NiceCars" file="/NiceCars/src/main/java/com/utcn/is/NiceCars/dto/UserRegistrationDto.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="124" width="248" x="1737" y="138"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="21" language="java" name="com.utcn.is.NiceCars.util.Mapper" project="NiceCars" 
+    file="/NiceCars/src/main/java/com/utcn/is/NiceCars/util/Mapper.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="124" width="173" x="1911" y="-220"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="22" language="java" name="com.utcn.is.NiceCars.dto.AnnouncementDto.AnnouncementDtoBuilder" 
+    project="NiceCars" file="/NiceCars/src/main/java/com/utcn/is/NiceCars/dto/AnnouncementDto.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="443" width="238" x="-299" y="430"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="23" language="java" name="com.utcn.is.NiceCars.dto.UserRegistrationDto" project="NiceCars" 
+    file="/NiceCars/src/main/java/com/utcn/is/NiceCars/dto/UserRegistrationDto.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="124" width="196" x="1762" y="-61"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="24" language="java" name="com.utcn.is.NiceCars.model.NotificationsCenter" project="NiceCars" 
+    file="/NiceCars/src/main/java/com/utcn/is/NiceCars/model/NotificationsCenter.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="124" width="192" x="121" y="256"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="25" language="java" name="com.utcn.is.NiceCars.dto.PhotoDto" project="NiceCars" 
+    file="/NiceCars/src/main/java/com/utcn/is/NiceCars/dto/PhotoDto.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="124" width="174" x="2000" y="-61"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="26" language="java" name="com.utcn.is.NiceCars.model.Photo" project="NiceCars" 
+    file="/NiceCars/src/main/java/com/utcn/is/NiceCars/model/Photo.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="124" width="192" x="3365" y="451"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="27" language="java" name="com.utcn.is.NiceCars.util.FieldMatchValidator" project="NiceCars" 
+    file="/NiceCars/src/main/java/com/utcn/is/NiceCars/util/FieldMatchValidator.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="124" width="189" x="2115" y="-217"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="28" language="java" name="com.utcn.is.NiceCars.service.CommentService" project="NiceCars" 
+    file="/NiceCars/src/main/java/com/utcn/is/NiceCars/service/CommentService.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="124" width="196" x="1099" y="660"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="29" language="java" name="com.utcn.is.NiceCars.util.SearchUtil" project="NiceCars" 
+    file="/NiceCars/src/main/java/com/utcn/is/NiceCars/util/SearchUtil.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="124" width="173" x="2215" y="-63"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="30" language="java" name="com.utcn.is.NiceCars.dto.CommentDto" project="NiceCars" 
+    file="/NiceCars/src/main/java/com/utcn/is/NiceCars/dto/CommentDto.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="124" width="174" x="2346" y="-208"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="31" language="java" name="com.utcn.is.NiceCars.model.Announcement.AnnouncementBuilder" project="NiceCars" 
+    file="/NiceCars/src/main/java/com/utcn/is/NiceCars/model/Announcement.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="215" width="208" x="4028" y="-80"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="32" language="java" name="com.utcn.is.NiceCars.util.ImageUtil" project="NiceCars" 
+    file="/NiceCars/src/main/java/com/utcn/is/NiceCars/util/ImageUtil.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="124" width="173" x="1362" y="312"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="33" language="java" name="com.utcn.is.NiceCars.service.PhotoService" project="NiceCars" 
+    file="/NiceCars/src/main/java/com/utcn/is/NiceCars/service/PhotoService.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="124" width="196" x="1405" y="699"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="34" language="java" name="com.utcn.is.NiceCars.model.Comment.CommentBuilder" project="NiceCars" 
+    file="/NiceCars/src/main/java/com/utcn/is/NiceCars/model/Comment.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="124" width="192" x="3735" y="164"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <interface id="35" language="java" name="com.utcn.is.NiceCars.repository.AnnouncementRepository" project="NiceCars" 
+    file="/NiceCars/src/main/java/com/utcn/is/NiceCars/repository/AnnouncementRepository.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="124" width="233" x="1615" y="540"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </interface>  
+  <class id="36" language="java" name="com.utcn.is.NiceCars.model.User" project="NiceCars" 
+    file="/NiceCars/src/main/java/com/utcn/is/NiceCars/model/User.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="124" width="192" x="3449" y="-166"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <class id="37" language="java" name="com.utcn.is.NiceCars.service.AnnouncementService" project="NiceCars" 
+    file="/NiceCars/src/main/java/com/utcn/is/NiceCars/service/AnnouncementService.java" binary="false" 
+    corner="BOTTOM_RIGHT">    
+    <position height="124" width="211" x="1087" y="424"/>    
+    <display autosize="false" stereotype="true" package="true" initial-value="false" signature="true" 
+      sort-features="false" accessors="true" visibility="true">      
+      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
+      <operations public="true" package="true" protected="true" private="true" static="true"/>    
+    </display>  
+  </class>  
+  <association id="38">    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="39" name="notificationsCenter"/>      
+      <multiplicity id="40" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="24" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="41">    
+    <bendpoint x="4851" y="2184"/>    
+    <bendpoint x="4851" y="2492"/>    
+    <bendpoint x="4851" y="3088"/>    
+    <end type="SOURCE" refId="14" navigable="false">      
+      <attribute id="42" name="announcement"/>      
+      <multiplicity id="43" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="44">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="45" name="userService"/>      
+      <multiplicity id="46" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="7" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="47">    
+    <end type="SOURCE" refId="9" navigable="false">      
+      <attribute id="48" name="photos"/>      
+      <multiplicity id="49" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="26" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <realization id="50">    
+    <end type="SOURCE" refId="24"/>    
+    <end type="TARGET" refId="16"/>  
+  </realization>  
+  <association id="51">    
+    <end type="SOURCE" refId="37" navigable="false">      
+      <attribute id="52" name="announcementRepository"/>      
+      <multiplicity id="53" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="35" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="54">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="55" name="filter"/>      
+      <multiplicity id="56" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="15" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="57">    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="58" name="imageUtil"/>      
+      <multiplicity id="59" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="32" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="60">    
+    <end type="SOURCE" refId="28" navigable="false">      
+      <attribute id="61" name="commentRepository"/>      
+      <multiplicity id="62" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="11" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="63">    
+    <end type="SOURCE" refId="34" navigable="false">      
+      <attribute id="64" name="user"/>      
+      <multiplicity id="65" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="36" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="66">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="67" name="announcementService"/>      
+      <multiplicity id="68" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="37" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <nesting id="69">    
+    <bendpoint x="5206" y="3088"/>    
+    <bendpoint x="5206" y="2492"/>    
+    <bendpoint x="5206" y="2184"/>    
+    <bendpoint x="5206" y="1264"/>    
+    <end type="SOURCE" refId="9"/>    
+    <end type="TARGET" refId="31"/>  
+  </nesting>  
+  <association id="70">    
+    <end type="SOURCE" refId="26" navigable="false">      
+      <attribute id="71" name="announcement"/>      
+      <multiplicity id="72" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="73">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="74" name="announcementService"/>      
+      <multiplicity id="75" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="37" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="76">    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="77" name="announcementService"/>      
+      <multiplicity id="78" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="37" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="79">    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="80" name="userRepository"/>      
+      <multiplicity id="81" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="12" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="82">    
+    <end type="SOURCE" refId="5" navigable="false">      
+      <attribute id="83" name="imageUtil"/>      
+      <multiplicity id="84" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="32" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="85">    
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="86" name="userService"/>      
+      <multiplicity id="87" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="7" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="88">    
+    <bendpoint x="4872" y="3088"/>    
+    <bendpoint x="4872" y="2492"/>    
+    <bendpoint x="4872" y="2184"/>    
+    <end type="SOURCE" refId="9" navigable="false">      
+      <attribute id="89" name="comments"/>      
+      <multiplicity id="90" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="14" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <nesting id="91">    
+    <end type="SOURCE" refId="23"/>    
+    <end type="TARGET" refId="20"/>  
+  </nesting>  
+  <association id="92">    
+    <end type="SOURCE" refId="37" navigable="false">      
+      <attribute id="93" name="photoService"/>      
+      <multiplicity id="94" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="33" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="95">    
+    <bendpoint x="4760" y="3088"/>    
+    <end type="SOURCE" refId="36" navigable="false">      
+      <attribute id="96" name="announcements"/>      
+      <multiplicity id="97" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="98">    
+    <bendpoint x="4781" y="3088"/>    
+    <end type="SOURCE" refId="9" navigable="false">      
+      <attribute id="99" name="user"/>      
+      <multiplicity id="100" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="36" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <nesting id="101">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="34"/>  
+  </nesting>  
+  <association id="102">    
+    <bendpoint x="4378" y="2492"/>    
+    <bendpoint x="4378" y="3088"/>    
+    <end type="SOURCE" refId="34" navigable="false">      
+      <attribute id="103" name="announcement"/>      
+      <multiplicity id="104" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <nesting id="105">    
+    <end type="SOURCE" refId="13"/>    
+    <end type="TARGET" refId="18"/>  
+  </nesting>  
+  <association id="106">    
+    <bendpoint x="4418" y="1264"/>    
+    <bendpoint x="4418" y="2184"/>    
+    <end type="SOURCE" refId="31" navigable="false">      
+      <attribute id="107" name="user"/>      
+      <multiplicity id="108" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="36" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="109">    
+    <bendpoint x="4785" y="2184"/>    
+    <end type="SOURCE" refId="14" navigable="false">      
+      <attribute id="110" name="user"/>      
+      <multiplicity id="111" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="36" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="112">    
+    <end type="SOURCE" refId="4" navigable="false">      
+      <attribute id="113" name="imageUtil"/>      
+      <multiplicity id="114" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="32" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <nesting id="115">    
+    <end type="SOURCE" refId="8"/>    
+    <end type="TARGET" refId="22"/>  
+  </nesting>  
+  <generalization id="116">    
+    <end type="SOURCE" refId="14"/>    
+    <end type="TARGET" refId="17"/>  
+  </generalization>  
+  <association id="117">    
+    <end type="SOURCE" refId="6" navigable="false">      
+      <attribute id="118" name="announcements"/>      
+      <multiplicity id="119" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="9" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="120">    
+    <end type="SOURCE" refId="3" navigable="false">      
+      <attribute id="121" name="userService"/>      
+      <multiplicity id="122" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="7" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="123">    
+    <end type="SOURCE" refId="33" navigable="false">      
+      <attribute id="124" name="photoRepository"/>      
+      <multiplicity id="125" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="10" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="126">    
+    <end type="SOURCE" refId="31" navigable="false">      
+      <attribute id="127" name="comments"/>      
+      <multiplicity id="128" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="14" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="129">    
+    <end type="SOURCE" refId="37" navigable="false">      
+      <attribute id="130" name="commentService"/>      
+      <multiplicity id="131" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="28" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="132">    
+    <end type="SOURCE" refId="37" navigable="false">      
+      <attribute id="133" name="userService"/>      
+      <multiplicity id="134" minimum="0" maximum="1"/>    
+    </end>    
+    <end type="TARGET" refId="7" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <association id="135">    
+    <bendpoint x="5126" y="1264"/>    
+    <bendpoint x="5126" y="2184"/>    
+    <bendpoint x="5126" y="2492"/>    
+    <end type="SOURCE" refId="31" navigable="false">      
+      <attribute id="136" name="photos"/>      
+      <multiplicity id="137" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="26" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
+  <nesting id="138">    
+    <end type="SOURCE" refId="36"/>    
+    <end type="TARGET" refId="6"/>  
+  </nesting>  
+  <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
+    sort-features="false" accessors="true" visibility="true">    
+    <attributes public="true" package="true" protected="true" private="true" static="true"/>    
+    <operations public="true" package="true" protected="true" private="true" static="true"/>  
+  </classifier-display>  
+  <association-display labels="true" multiplicity="true"/>
+</class-diagram>

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="stylesheet" type="text/css"
+	th:href="@{/webjars/bootstrap/4.5.3/css/bootstrap.min.css}" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.header {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  background-color: #F8F9FA;
+}
+
+.progress-container {
+  width: 100%;
+  height: 8px;
+  background: #F8F9FA;
+}
+
+.progress-bar {
+  height: 8px;
+  background: #4caf50;
+  width: 0%;
+}
+</style>
+<title>NiceCars - buy and sell nice cars</title>
+
+</head>
+<body style="background-image: url('/background-cover.jpg');background-repeat: no-repeat;background-attachment: fixed;background-size: cover;">
+	
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+    <a class="navbar-brand" href="#" th:href="@{/}">
+					<img src="/NiceCars-logo.svg" width="150" height="70" class="d-inline-block align-top" style="padding-top: 7px;">
+				</a>
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/post}"><i class="fa fa-automobile"></i> Sell</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/my-profile}"><i class="fa fa-user-circle"></i> My profile</a>
+      </li>
+      <li class="nav-item">
+      	<a class="nav-link" th:href="@{/filter}"><i class="fa fa-filter"></i> Filter</a>
+      	</li>
+      <li class="nav-item">
+      	<a class="nav-link" th:href="@{/statistics}"><i class="fa fa-bar-chart"></i> Statistics</a>
+      	</li>
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/logout}"><i class="fa fa-sign-out"></i> Log out</a>
+      </li>
+    </ul>
+    <form class="form-inline" th:action="@{/}" th:object="${term}" method="post">
+    		<input class="form-control mr-sm-2" id="term" name="term" placeholder="Search">
+    		<button type="submit" class="btn btn-outline-success my-2 my-sm-0">Search</button>
+  		</form>
+  </div>
+</nav>
+
+<div class="header">
+  <div class="progress-container">
+    <div class="progress-bar" id="myBar"></div>
+  </div>  
+</div>
+
+	<br>
+	<br>
+	<div class="container" style="background-color:white;">
+		
+		<h2>Statistics</h2>
+  <br>
+  <!-- Nav tabs -->
+  <ul class="nav nav-tabs" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active" data-toggle="tab" href="#home">General</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#menu1">Make</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#menu2">County</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#menu3">Fuel</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#menu4">Body</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#menu5">Gearbox</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#menu6">Powertrain</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="tab" href="#menu7">Emissions</a>
+  </ul>
+
+  <!-- Tab panes -->
+  <div class="tab-content">
+    <div id="home" class="container tab-pane active"><br>
+      <h3>General</h3>
+      <ul class="list-group" style="padding-bottom:20px;">
+  		<li class="list-group-item" th:each="general: ${generalMap}" th:text="${general.getKey()} + ': ' + ${general.getValue()}"></li>
+	</ul>
+    </div>
+    <div id="menu1" class="container tab-pane fade"><br>
+      <h3>Make</h3>
+      <ul class="list-group" style="padding-bottom:20px;">
+  		<li class="list-group-item" th:each="make: ${makeMap}" th:text="${make.getKey()} + ': ' + ${make.getValue()}"></li>
+	</ul>
+    </div>
+    <div id="menu2" class="container tab-pane fade"><br>
+      <h3>County</h3>
+      <ul class="list-group" style="padding-bottom:20px;">
+  		<li class="list-group-item" th:each="county: ${countyMap}" th:text="${county.getKey()} + ': ' + ${county.getValue()}"></li>
+	</ul>
+    </div>
+    <div id="menu3" class="container tab-pane fade"><br>
+      <h3>Fuel</h3>
+      <ul class="list-group" style="padding-bottom:20px;">
+  		<li class="list-group-item" th:each="fuel: ${fuelMap}" th:text="${fuel.getKey()} + ': ' + ${fuel.getValue()}"></li>
+	</ul>
+    </div>
+    <div id="menu4" class="container tab-pane fade"><br>
+      <h3>Body</h3>
+      <ul class="list-group" style="padding-bottom:20px;">
+  		<li class="list-group-item" th:each="body: ${bodyMap}" th:text="${body.getKey()} + ': ' + ${body.getValue()}"></li>
+	</ul>
+    </div>
+    <div id="menu5" class="container tab-pane fade"><br>
+      <h3>Gearbox</h3>
+      <ul class="list-group" style="padding-bottom:20px;">
+  		<li class="list-group-item" th:each="gearbox: ${gearboxMap}" th:text="${gearbox.getKey()} + ': ' + ${gearbox.getValue()}"></li>
+	</ul>
+    </div>
+    <div id="menu6" class="container tab-pane fade"><br>
+      <h3>Powertrain</h3>
+      <ul class="list-group" style="padding-bottom:20px;">
+  		<li class="list-group-item" th:each="powertrain: ${powertrainMap}" th:text="${powertrain.getKey()} + ': ' + ${powertrain.getValue()}"></li>
+	</ul>
+    </div>
+    <div id="menu7" class="container tab-pane fade"><br>
+      <h3>Emissions</h3>
+      <ul class="list-group" style="padding-bottom:20px;">
+  		<li class="list-group-item" th:each="emission: ${emissionsMap}" th:text="${emission.getKey()} + ': ' + ${emission.getValue()}"></li>
+	</ul>
+    </div>
+  </div>
+		
+	</div>
+
+	<script type="text/javascript"
+		th:src="@{/webjars/jquery/3.2.1/jquery.min.js/}"></script>
+	<script type="text/javascript"
+		th:src="@{/webjars/bootstrap/4.5.3/js/bootstrap.min.js}"></script>
+<script>
+// When the user scrolls the page, execute myFunction 
+window.onscroll = function() {myFunction()};
+
+function myFunction() {
+  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  var scrolled = (winScroll / height) * 100;
+  document.getElementById("myBar").style.width = scrolled + "%";
+}
+</script>
+</body>
+</html>

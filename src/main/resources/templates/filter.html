@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="stylesheet" type="text/css"
+	th:href="@{/webjars/bootstrap/4.5.3/css/bootstrap.min.css}" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="../static/style.css" th:href="@{/style.css}" rel="stylesheet"/>
+<style>
+.header {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  background-color: #F8F9FA;
+}
+
+.progress-container {
+  width: 100%;
+  height: 8px;
+  background: #F8F9FA;
+}
+
+.progress-bar {
+  height: 8px;
+  background: #4caf50;
+  width: 0%;
+}
+</style>
+<link rel="stylesheet" href="https://res.cloudinary.com/dxfq3iotg/raw/upload/v1569006288/BBBootstrap/choices.min.css?version=7.0.0">
+<link href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/themes/base/jquery-ui.css" rel="stylesheet" type="text/css"/>
+<script src="https://res.cloudinary.com/dxfq3iotg/raw/upload/v1569006273/BBBootstrap/choices.min.js?version=7.0.0"></script>
+
+<title>NiceCars - buy and sell nice cars</title>
+
+</head>
+<body style="background-image: url('/background-cover.jpg');background-repeat: no-repeat;background-attachment: fixed;background-size: cover;">
+	
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+    <a class="navbar-brand" href="#" th:href="@{/}">
+					<img src="/NiceCars-logo.svg" width="150" height="70" class="d-inline-block align-top" style="padding-top: 7px;">
+				</a>
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/post}"><i class="fa fa-automobile"></i> Sell</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/my-profile}"><i class="fa fa-user-circle"></i> My profile</a>
+      </li>
+      <li class="nav-item">
+      	<a class="nav-link" th:href="@{/filter}"><i class="fa fa-filter"></i> Filter</a>
+      	</li>
+      <li class="nav-item">
+      	<a class="nav-link" th:href="@{/statistics}"><i class="fa fa-bar-chart"></i> Statistics</a>
+      	</li>
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/logout}"><i class="fa fa-sign-out"></i> Log out</a>
+      </li>
+    </ul>
+    <form class="form-inline" th:action="@{/}" th:object="${term}" method="post">
+    		<input class="form-control mr-sm-2" id="term" name="term" placeholder="Search">
+    		<button type="submit" class="btn btn-outline-success my-2 my-sm-0">Search</button>
+  		</form>
+  </div>
+</nav>
+
+<div class="header">
+  <div class="progress-container">
+    <div class="progress-bar" id="myBar"></div>
+  </div>  
+</div>
+
+	<br>
+	<br>
+	<div class="container" style="background-color:white;">
+		<h2>Filter announcements</h2>
+
+		<p>
+			By make, county, price...
+		</p>
+		<br>
+		<div class="row">
+			<div class="col-md-6 col-md-offset-3">
+				
+				<form th:action="@{/filter}" th:object="${filterDto}" method="post">
+					
+					<div style="padding-bottom:10px;">
+						<label for="choices-multiple-remove-button" class="control-label">Make</label>
+						<select class="form-control selectpicker" id="choices-multiple-remove-button" placeholder="Select one or more..." multiple th:field="*{makes}">
+                    		<option th:each="carMake: ${carMakes}" th:value="${carMake}" th:text="${carMake}"></option>
+        				</select>
+        			</div>
+        			
+        			<div style="padding-bottom:10px;">
+						<label for="choices-multiple-remove-button" class="control-label">County</label>
+						<select class="form-control selectpicker" id="choices-multiple-remove-button" placeholder="Select one or more..." multiple th:field="*{county}">
+                    		<option th:each="c: ${counties}" th:value="${c}" th:text="${c}"></option>
+        				</select>
+        			</div>
+        			
+        			<div style="padding-top:10px;padding-bottom:10px;">
+        				<label for="maxPrice">Maximum price</label>
+						<input type="range" value="0" min="0" max="100000" step="1000" class="custom-range" id="maxPrice" th:field="*{maxPrice}" oninput="this.nextElementSibling.value = this.value">
+						<output>0</output>
+        			</div>
+        			
+        			<div style="padding-top:10px;padding-bottom:10px;">
+        				<label for="oldestFabricationYear">Oldest fabrication year</label>
+						<input type="range" value="1900" min="1900" max="2021" step="1" class="custom-range" id="oldestFabricationYear" th:field="*{oldestFabricationYear}" oninput="this.nextElementSibling.value = this.value">
+						<output>1900</output>
+        			</div>
+        			
+        			<div style="padding-top:10px;padding-bottom:10px;">
+        				<label for="maxKilometers">Maximum nr. of kilometers</label>
+						<input type="range" value="0" min="0" max="500000" step="10000" class="custom-range" id="maxKilometers" th:field="*{maxKilometers}" oninput="this.nextElementSibling.value = this.value">
+						<output>0</output>
+        			</div>
+        			
+        			<div style="padding-top:10px;padding-bottom:10px;">
+        				<label for="maxDisplacement">Maximum displacement</label>
+						<input type="range" value="49" min="49" max="7000" step="1" class="custom-range" id="maxDisplacement" th:field="*{maxDisplacement}" oninput="this.nextElementSibling.value = this.value">
+						<output>49</output>
+        			</div>
+        			
+        			<div style="padding-top:10px;padding-bottom:10px;">
+        				<label for="minHorsepower">Maximum horsepower</label>
+						<input type="range" value="0" min="0" max="2000" step="1" class="custom-range" id="minHorsepower" th:field="*{minHorsepower}" oninput="this.nextElementSibling.value = this.value">
+						<output>0</output>
+        			</div>
+        			
+        			<div style="padding-top:10px;padding-bottom:10px;">
+        				<label for="maxConsumption">Maximum consumption</label>
+						<input type="range" value="0" min="0" max="35" step="1" class="custom-range" id="maxConsumption" th:field="*{maxConsumption}" oninput="this.nextElementSibling.value = this.value">
+						<output>0</output>
+        			</div>
+        			
+        			<div style="padding-bottom:10px;">
+						<label for="choices-multiple-remove-button" class="control-label">Fuel</label>
+						<select class="form-control selectpicker" id="choices-multiple-remove-button" placeholder="Select one or more..." multiple th:field="*{fuel}">
+                    		<option th:each="f: ${fuels}" th:value="${f}" th:text="${f}"></option>
+        				</select>
+        			</div>
+        			
+        			<div style="padding-bottom:10px;">
+						<label for="choices-multiple-remove-button" class="control-label">Body</label>
+						<select class="form-control selectpicker" id="choices-multiple-remove-button" placeholder="Select one or more..." multiple th:field="*{body}">
+                    		<option th:each="b: ${bodies}" th:value="${b}" th:text="${b}"></option>
+        				</select>
+        			</div>
+        			
+        			<div style="padding-bottom:10px;">
+						<label for="choices-multiple-remove-button" class="control-label">Gearbox</label>
+						<select class="form-control selectpicker" id="choices-multiple-remove-button" placeholder="Select one or more..." multiple th:field="*{gearbox}">
+                    		<option th:each="g: ${gearboxes}" th:value="${g}" th:text="${g}"></option>
+        				</select>
+        			</div>
+        			
+        			<div style="padding-bottom:10px;">
+						<label for="choices-multiple-remove-button" class="control-label">Powertrain</label>
+						<select class="form-control selectpicker" id="choices-multiple-remove-button" placeholder="Select one or more..." multiple th:field="*{powertrain}">
+                    		<option th:each="p: ${powertrains}" th:value="${p}" th:text="${p}"></option>
+        				</select>
+        			</div>
+        			
+        			<div style="padding-bottom:10px;">
+						<label for="choices-multiple-remove-button" class="control-label">Emissions</label>
+						<select class="form-control selectpicker" id="choices-multiple-remove-button" placeholder="Select one or more..." multiple th:field="*{emissions}">
+                    		<option th:each="e: ${emissions}" th:value="${e}" th:text="${e}"></option>
+        				</select>
+        			</div>
+					
+					<div class="form-group" style="padding-top:10px;">
+						<button name="filter" type="submit" class="btn btn-success">Filter</button>
+					</div>
+				</form>
+				
+			</div>
+		</div>
+	</div>
+
+	<script type="text/javascript"
+		th:src="@{/webjars/jquery/3.2.1/jquery.min.js/}"></script>
+	<script type="text/javascript"
+		th:src="@{/webjars/bootstrap/4.5.3/js/bootstrap.min.js}"></script>
+<script>
+// When the user scrolls the page, execute myFunction 
+window.onscroll = function() {myFunction()};
+
+function myFunction() {
+  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  var scrolled = (winScroll / height) * 100;
+  document.getElementById("myBar").style.width = scrolled + "%";
+}
+</script>
+<script>
+$(document).ready(function(){
+ var multipleCancelButton = new Choices('#choices-multiple-remove-button', {
+ removeItemButton: true
+ });
+ });
+</script>
+
+</body>
+</html>

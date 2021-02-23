@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="stylesheet" type="text/css"
+	th:href="@{/webjars/bootstrap/4.5.3/css/bootstrap.min.css}" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<style>
+.header {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  background-color: #F8F9FA;
+}
+
+.progress-container {
+  width: 100%;
+  height: 8px;
+  background: #F8F9FA;
+}
+
+.progress-bar {
+  height: 8px;
+  background: #4caf50;
+  width: 0%;
+}
+</style>
+<style>
+.corner-ribbon {
+  font-weight: bold;
+  width: 200px;
+  background: #e43;
+  position: absolute;
+  top: 25px;
+  left: -50px;
+  text-align: center;
+  line-height: 100px;
+  letter-spacing: 1px;
+  color: #f0f0f0;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+
+/* Custom styles */
+
+.corner-ribbon.shadow {
+  box-shadow: 0 0 3px rgba(0, 0, 0, .3);
+}
+
+
+/* Different positions */
+
+.corner-ribbon.top-left {
+  top: -10px;
+  left: -103px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  background-color: red;
+  width: 256px;
+  height: 75px;
+}
+
+.card {
+  overflow: hidden;
+}
+</style>
+<title>NiceCars - buy and sell nice cars</title>
+
+</head>
+<body style="background-image: url('/background-cover.jpg');background-repeat: no-repeat;background-attachment: fixed;background-size: cover;">
+	
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+    <a class="navbar-brand" href="#" th:href="@{/}">
+					<img src="/NiceCars-logo.svg" width="150" height="70" class="d-inline-block align-top" style="padding-top: 7px;">
+				</a>
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/post}"><i class="fa fa-automobile"></i> Sell</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/my-profile}"><i class="fa fa-user-circle"></i> My profile</a>
+      </li>
+      <li class="nav-item">
+      	<a class="nav-link" th:href="@{/filter}"><i class="fa fa-filter"></i> Filter</a>
+      	</li>
+      <li class="nav-item">
+      	<a class="nav-link" th:href="@{/statistics}"><i class="fa fa-bar-chart"></i> Statistics</a>
+      	</li>
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/logout}"><i class="fa fa-sign-out"></i> Log out</a>
+      </li>
+    </ul>
+    <form class="form-inline" th:action="@{/}" th:object="${term}" method="post">
+    		<input class="form-control mr-sm-2" id="term" name="term" placeholder="Search">
+    		<button type="submit" class="btn btn-outline-success my-2 my-sm-0">Search</button>
+  		</form>
+  </div>
+</nav>
+
+<div class="header">
+  <div class="progress-container">
+    <div class="progress-bar" id="myBar"></div>
+  </div>  
+</div>
+
+	<br>
+	<br>
+	<div th:unless="${loggedinUser.equals(owner)}"><p><strong>Nothing to see here!</strong></p></div>
+	<div class="container" style="background-color:white;" th:if="${loggedinUser.equals(owner)}">
+		<h2>Nice Cars</h2>
+
+		<p>
+			Welcome <span sec:authentication="principal.username">User</span>!
+		</p>
+		
+		<div class="row">
+			<div>
+		
+		<table class="table table-striped">
+		<thead>
+			<tr>
+				<th style="width: 70%"> Image </th>
+				<th style="width: 30%"> </th>
+			</tr>
+		</thead>
+			<tbody>
+				<tr th:each="photo : ${photos}">
+					<td th:if="${photo!=null}">
+					
+					<img width="669" height="379" class='img-thumbnail' th:src="'data:image/jpeg;base64,' 
+					+ ${imageUtil.getImageData(photo.getBytes())}" />
+					</td>
+					
+					<td th:if="${photo!=null}">
+						<ul style="list-style-type:none">
+            			<li style="padding-bottom:10px;">
+            			<form th:action="@{/edit-announcement/{id}/photos(id=${id})}" th:object="${photo_id}" method="post">
+            				<input id="photo_id" name="photo_id" type="hidden" th:value="${photo.id}">
+            				<button name="delete-photo" id="photo_id" type="submit" class="btn btn-success" th:disabled="${photos.size() <= 2}">
+            					<i class="fa fa-trash"></i> Delete</button>
+            			</form></li>
+            			 				
+            			<li style="padding-bottom:10px;" >
+            			<form th:action="@{/edit-announcement/{id}/photos(id=${id})}" th:object="${photoId}" method="post">
+            				<input id="photoId" name="photoId" type="hidden" th:value="${photo.id}">  				
+            				<button name="set-as-cover" id="photoId" type="submit" class="btn btn-success" th:disabled="${photo.isCover()==true}">
+            					<i class="fa fa-shield"></i> Set as cover
+            				</button>
+            				</form></li>
+            			
+            			</ul>
+					</td>
+            		
+        		</tr>
+		</tbody>
+	</table> 
+	<br>
+	<div style="padding-left:20px;">
+	<form th:action="@{/edit-announcement/{id}/photos(id=${id})}" th:object="${photoDto}" 
+		method="post" enctype="multipart/form-data">
+		<p class="error-message" th:if="${#fields.hasGlobalErrors()}"
+						th:each="error : ${#fields.errors('global')}" th:text="${error}">Validation
+						error</p>
+		<div class="form-group">
+            <label class="control-label" for="files">Upload photos:</label>
+            <input type="file" class="form-control" id="files" name="files" multiple accept="image/*" th:field="*{files}" th:disabled="${photos.size() >= 10}"></input>
+            <p class="error-message" style="color:red;"
+							th:each="error : ${#fields.errors('files')}" th:text="${error}">Validation
+							error</p>
+         </div>
+         
+         <div class="form-group">
+			<button name="add-photos" type="submit" class="btn btn-success" th:disabled="${photos.size() >= 10}">Submit</button>
+		</div>
+         
+	</form>
+		</div>
+		</div>
+		</div>
+	</div>
+
+	<script type="text/javascript"
+		th:src="@{/webjars/jquery/3.2.1/jquery.min.js/}"></script>
+	<script type="text/javascript"
+		th:src="@{/webjars/bootstrap/4.5.3/js/bootstrap.min.js}"></script>
+<script>
+// When the user scrolls the page, execute myFunction 
+window.onscroll = function() {myFunction()};
+
+function myFunction() {
+  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  var scrolled = (winScroll / height) * 100;
+  document.getElementById("myBar").style.width = scrolled + "%";
+}
+</script>
+</body>
+</html>

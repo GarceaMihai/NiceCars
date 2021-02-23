@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="stylesheet" type="text/css"
+	th:href="@{/webjars/bootstrap/4.5.3/css/bootstrap.min.css}" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src='https://kit.fontawesome.com/a076d05399.js'></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>NiceCars - my profile</title>
+<style>
+.header {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  background-color: #F8F9FA;
+}
+
+.progress-container {
+  width: 100%;
+  height: 8px;
+  background: #F8F9FA;
+}
+
+.progress-bar {
+  height: 8px;
+  background: #4caf50;
+  width: 0%;
+}
+</style>
+</head>
+<body style="background-image: url('/background-cover.jpg');background-repeat: no-repeat;background-attachment: fixed;background-size: cover;">
+	
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+    <a class="navbar-brand" href="#" th:href="@{/}">
+					<img src="/NiceCars-logo.svg" width="150" height="70" class="d-inline-block align-top" style="padding-top: 7px;">
+				</a>
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/post}"><i class="fa fa-automobile"></i> Sell</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/my-profile}"><i class="fa fa-user-circle"></i> My profile</a>
+      </li>
+      <li class="nav-item">
+      	<a class="nav-link" th:href="@{/filter}"><i class="fa fa-filter"></i> Filter</a>
+      	</li>
+      <li class="nav-item">
+      	<a class="nav-link" th:href="@{/statistics}"><i class="fa fa-bar-chart"></i> Statistics</a>
+      	</li>
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/logout}"><i class="fa fa-sign-out"></i> Log out</a>
+      </li>
+    </ul>
+    <form class="form-inline" th:action="@{/}" th:object="${term}" method="post">
+    		<input class="form-control mr-sm-2" id="term" name="term" placeholder="Search">
+    		<button type="submit" class="btn btn-outline-success my-2 my-sm-0">Search</button>
+  		</form>
+  </div>
+</nav>
+
+<div class="header">
+  <div class="progress-container">
+    <div class="progress-bar" id="myBar"></div>
+  </div>  
+</div>
+
+	<br>
+	<br>
+	<div class="container" style="background-color:white;padding-top:30px;padding-left:30px;padding-right:30px;padding-bottom:30px;">
+	
+		<div th:if="${param.success}">
+					<div class="alert alert-info">You've successfully updated your info!</div>
+				</div>
+	
+		<h2>My profile</h2>
+		<br>
+		<p>
+			 <form th:action="@{/my-profile}" th:object="${userDto}" method="post">	
+				<p class="error-message" th:if="${#fields.hasGlobalErrors()}" style="color:red;"
+						th:each="error : ${#fields.errors('global')}" th:text="${error}">Validation
+						error</p>
+							
+				<div class="form-group">
+						<label for="username" class="control-label">Username</label> <input
+							name="username" id="username" class="form-control" th:field="*{username}" readonly/>
+					</div>
+					
+					<div class="form-group"
+						th:classappend="${#fields.hasErrors('email')}? 'has-error':''">
+						<label for="email" class="control-label" >Email</label> <input
+							id="email" class="form-control" th:field="*{email}" />
+						<p class="error-message" style="color:red;"
+							th:each="error : ${#fields.errors('email')}" th:text="${error}">Validation
+							error</p>
+					</div>
+					
+					<div class="form-group"
+						th:classappend="${#fields.hasErrors('telephoneNumber')}? 'has-error':''">
+						<label for="telephoneNumber" class="control-label" >Telephone Number</label> <input
+							id="telephoneNumber" th:name="telephoneNumber" type="text" class="form-control" th:field="*{telephoneNumber}"/>
+						<p class="error-message" style="color:red;"
+							th:each="error : ${#fields.errors('telephoneNumber')}" th:text="${error}">Validation
+							error</p>
+					</div>
+					
+					<input type="hidden" id="password" name="password" th:field="*{password}">
+					<input type="hidden" id="confirmPassword" name="confirmPassword" th:field="*{confirmPassword}">
+					
+					<div class="form-group">
+						<button name="update-info" type="submit" class="btn btn-success">Update</button>
+					</div>
+			</form>
+			
+		</p>
+		
+		<table class="table table-striped" th:unless="${currentUser.getAnnouncements().size() == 0}">
+		<thead>
+			<tr>
+				<th style="width: 50%"> Cover </th>
+				<th style="width: 20%"> Title </th>
+				<th style="width: 10%"> Price(€) </th>
+				<th style="width: 10%"> Location </th>
+				<th style="width: 10%"> </th>
+			</tr>
+		</thead>
+			<tbody>
+				<tr th:each="announcement : ${currentUser.getAnnouncements()}">
+					<td style="position:relative;"><a th:href="@{/announcement/{id}(id=${announcement.id})}">
+					<img th:style="${!announcement.isActive() ? 'filter: blur(3px);-webkit-filter: blur(3px);' : 'filter: blur(0px);-webkit-filter: blur(0px);'}" 
+					width="669" height="379" class='img-thumbnail' th:src="'data:image/jpeg;base64,' 
+					+ ${imageUtil.getImageData(announcement.getPhotos().get(announcement.getCoverIndex()).getBytes())}" />
+					<img th:if="${announcement.isPromoted()==true}" style="position:absolute;top:17px;left:17px;" width="100" height="100" src="/promoted-ribbon.jpg"/></a></td>
+            		<td><a th:href="@{/announcement/{id}(id=${announcement.id})}"><span th:text="${announcement.title}"> Title </span></a></td>
+            		<td><span th:text="${announcement.price}"> Price(€) </span></td>
+            		<td><span th:text="${announcement.county} + ', ' + ${announcement.locality}"> Location </span><td>
+            		<td>
+            			<ul style="list-style-type:none">
+            			<li style="padding-bottom:10px;">
+            			<form th:action="@{/my-profile}" th:object="${ann}" method="post">
+            				<input id="ann" name="ann" type="hidden" th:value="${announcement.id}">
+            				<button name="delete" id="ann" type="submit" class="btn btn-success"><i class="fa fa-trash"></i> Delete</button>
+            			</form></li>
+            			 				
+            			<li style="padding-bottom:10px;" th:if="${announcement.isPromoted() == false && announcement.isActive()}">
+            				<a th:href="@{/promote/{id}(id=${announcement.id})}">
+            					<button name="promote" id="promote" type="submit" class="btn btn-success" ><i class="fas fa-crown"></i> Promote
+            					</button>
+            				</a>
+            				</li>
+            			<li th:if="${announcement.isActive()}" style="padding-bottom:10px;">
+            				<form th:action="@{/my-profile}" th:object="${toDeactivateId}" method="post">
+            					<input id="toDeactivateId" name="toDeactivateId" type="hidden" th:value="${announcement.id}">
+            					<button name="deactivate" id="toDeactivateId" type="submit" class="btn btn-success" ><i class="fa fa-minus-circle"></i> Deactivate
+            					</button>
+            				</form>
+            				</li>
+            			<li th:unless="${announcement.isActive()}" style="padding-bottom:10px;">
+            				<form th:action="@{/my-profile}" th:object="${toActivateId}" method="post">
+            					<input id="toActivateId" name="toActivateId" type="hidden" th:value="${announcement.id}">
+            					<button name="activate" id="toActivateId" type="submit" class="btn btn-success" ><i class="fa fa-plus-circle"></i> Activate
+            					</button>
+            				</form>
+            				</li>
+            			<li>
+            				<a th:href="@{/edit-announcement/{id}(id=${announcement.id})}">
+            					<button name="edit" id="edit" type="submit" class="btn btn-success" ><i class="fas fa-edit"></i> Edit
+            					</button>
+            				</a>
+            				</li>
+            			</ul>
+            		</td>
+        		</tr>
+		</tbody>
+	</table>
+		</div>
+		</div>
+	</div>
+
+	<script type="text/javascript"
+		th:src="@{/webjars/jquery/3.2.1/jquery.min.js/}"></script>
+	<script type="text/javascript"
+		th:src="@{/webjars/bootstrap/4.5.3/js/bootstrap.min.js}"></script>
+<script>
+// When the user scrolls the page, execute myFunction 
+window.onscroll = function() {myFunction()};
+
+function myFunction() {
+  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  var scrolled = (winScroll / height) * 100;
+  document.getElementById("myBar").style.width = scrolled + "%";
+}
+</script>
+</body>
+</html>

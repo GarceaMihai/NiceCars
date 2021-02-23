@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<link rel="stylesheet" type="text/css"
+	th:href="@{/webjars/bootstrap/4.5.3/css/bootstrap.min.css}" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<style>
+.header {
+  position: fixed;
+  top: 0;
+  z-index: 1;
+  width: 100%;
+  background-color: #F8F9FA;
+}
+
+.progress-container {
+  width: 100%;
+  height: 8px;
+  background: #F8F9FA;
+}
+
+.progress-bar {
+  height: 8px;
+  background: #4caf50;
+  width: 0%;
+}
+</style>
+<title>NiceCars - buy and sell nice cars</title>
+
+</head>
+<body style="background-image: url('/background-cover.jpg');background-repeat: no-repeat;background-attachment: fixed;background-size: cover;">
+	
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+    <a class="navbar-brand" href="#" th:href="@{/}">
+					<img src="/NiceCars-logo.svg" width="150" height="70" class="d-inline-block align-top" style="padding-top: 7px;">
+				</a>
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/post}"><i class="fa fa-automobile"></i> Sell</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/my-profile}"><i class="fa fa-user-circle"></i> My profile</a>
+      </li>
+      <li class="nav-item">
+      	<a class="nav-link" th:href="@{/filter}"><i class="fa fa-filter"></i> Filter</a>
+      	</li>
+      <li class="nav-item">
+      	<a class="nav-link" th:href="@{/statistics}"><i class="fa fa-bar-chart"></i> Statistics</a>
+      	</li>
+      <li class="nav-item">
+        <a class="nav-link" th:href="@{/logout}"><i class="fa fa-sign-out"></i> Log out</a>
+      </li>
+    </ul>
+    <form class="form-inline" th:action="@{/}" th:object="${term}" method="post">
+    		<input class="form-control mr-sm-2" id="term" name="term" placeholder="Search">
+    		<button type="submit" class="btn btn-outline-success my-2 my-sm-0">Search</button>
+  		</form>
+  </div>
+</nav>
+
+<div class="header">
+  <div class="progress-container">
+    <div class="progress-bar" id="myBar"></div>
+  </div>  
+</div>
+
+	<br>
+	<br>
+	<div th:unless="${loggedinUser.equals(owner)}"><p><strong>Nothing to see here!</strong></p></div>
+	<div class="container" style="background-color:white;" th:if="${loggedinUser.equals(owner)}">
+		<h2 class="text-center">Nice Cars</h2>
+
+		<div class="col-md-6 offset-md-3" style="padding-bottom:100px;">
+                    <span class="anchor" id="formPayment"></span>
+                    <hr class="my-5">
+
+                    <!-- form card cc payment -->
+                    <div class="card card-outline-secondary">
+                        <div class="card-body">
+                            <h3 class="text-center">Credit Card Payment</h3>
+                            <hr>
+                            
+                            <form class="form" role="form" autocomplete="off" th:action="@{/promote/{id}(id=${id})}" method="post">
+                                <div class="form-group">
+                                    <label for="cc_name">Card Holder's Name</label>
+                                    <input type="text" class="form-control" id="cc_name" pattern="\w+ \w+.*" title="Full name on the card" required="required">
+                                </div>
+                                <div class="form-group">
+                                    <label>Card Number</label>
+                                    <input type="text" class="form-control" autocomplete="off" maxlength="20" pattern="\d{16}" title="16 digit number" required="">
+                                </div>
+                                
+                                    <div class="form-group row">
+                                    <label class="col-md-12">Card Expiration Date</label>
+                                    <div class="col-md-4">
+                                        <select class="form-control" name="cc_exp_mo" size="0">
+                                            <option th:each="i : ${#numbers.sequence(1, 12)}" th:value="${i}" th:text="${i}"></option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <select class="form-control" name="cc_exp_yr" size="0">
+                                            <option th:each="i : ${#numbers.sequence(2021, 2040)}" th:value="${i}" th:text="${i}"></option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <input type="text" class="form-control" autocomplete="off" maxlength="3" pattern="\d{3}" title="The three digits at the back of your card" required="" placeholder="CVC">
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <label class="col-md-12">Amount</label>
+                                </div>
+                                <div class="form-inline">
+                                    <div class="input-group">
+                                        <div class="input-group-prepend"><span class="input-group-text">€</span></div>
+                                        <input type="text" class="form-control text-right" id="exampleInputAmount" placeholder="40" disabled>
+                                        
+                                    </div>
+                                    <div class="col-md-6">
+                                        <button name="pay" id="pay" type="submit" class="btn btn-success btn-lg btn-block">Submit</button>
+                                    </div>
+                                </div>
+                                <hr>
+                                
+                            </form>
+                            <a th:href="@{/my-profile}">
+                                        <button name="cancel-payment" type="submit" class="btn btn-default btn-lg btn-block">Cancel</button>
+                                    </a>
+                        </div>
+                    </div>
+	</div>
+
+	<script type="text/javascript"
+		th:src="@{/webjars/jquery/3.2.1/jquery.min.js/}"></script>
+	<script type="text/javascript"
+		th:src="@{/webjars/bootstrap/4.5.3/js/bootstrap.min.js}"></script>
+<script>
+// When the user scrolls the page, execute myFunction 
+window.onscroll = function() {myFunction()};
+
+function myFunction() {
+  var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+  var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+  var scrolled = (winScroll / height) * 100;
+  document.getElementById("myBar").style.width = scrolled + "%";
+}
+</script>
+</body>
+</html>
